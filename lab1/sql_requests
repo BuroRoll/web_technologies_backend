@@ -1,0 +1,32 @@
+CREATE TABLE Authors (
+    Id INTEGER PRIMARY KEY,
+    AuthorName TEXT,
+    City TEXT,
+    Genre TEXT,
+    BookTitle TEXT,
+    ReleaseYear INTEGER,
+    PageCount INTEGER,
+    SoldCopies INTEGER
+);
+
+INSERT INTO Authors (AuthorName, City, Genre, BookTitle, ReleaseYear, PageCount, SoldCopies)
+VALUES ('Stephen King', 'New York', 'Horror', 'It', 1986, 1138, 35000000),
+       ('Agatha Christie', 'London', 'Detective', 'Murder on the Orient Express', 1934, 256, 20000000),
+       ('Gabriel Garcia Marquez', 'Mexico', 'Fiction', 'One Hundred Years of Solitude', 1967, 417, 3000000),
+       ('Lev Tolstoy', 'Moscow', 'Classic', 'War and Peace', 1869, 1225, 5000000),
+       ('J.K. Rowling', 'Edinburgh', 'Fantasy', 'Harry Potter and the Philosopher”s Stone', 1997, 223, 120000000);
+
+SELECT * FROM Authors WHERE Genre = 'Psychology';
+
+SELECT * FROM Authors WHERE City = 'New York';
+
+SELECT SUM(PageCount) AS TotalPageCount FROM Authors;
+
+SELECT COUNT(*) AS BookCount FROM Authors WHERE ReleaseYear > 2000;
+
+UPDATE Authors SET AuthorName = 'Stephen SCARE King' WHERE AuthorName = 'Stephen King';
+
+INSERT INTO Authors (AuthorName, City, Genre, BookTitle, ReleaseYear, PageCount, SoldCopies)
+VALUES ('Andrew Weir', 'Davis', 'Science Fiction', 'The Martian', 2014, 300, 10000);
+
+DELETE FROM Authors WHERE Id = 3;
