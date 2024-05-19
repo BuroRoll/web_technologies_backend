@@ -8,3 +8,6 @@ if __name__ == '__main__':
         print(f'Число {value} четное')
     else:
         print(f'Число {value} нечетное')
+
+
+print('test')
